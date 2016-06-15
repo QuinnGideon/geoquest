@@ -19,17 +19,23 @@ body {
 }
 
 #info {
-	background-image: url('stardust.png');
-	width: 600px;
-	height: 350px;
-	border: 12px solid RGBA(146, 178, 178, 1.00);
+	background-image: url('travel.jpg');
+	width: 750px;
+	height: 380px;
+	border: 12px solid RGBA(255, 93, 96, 0.97);
 	border-radius: 3px;
 	color: white;
-	margin-top: 50px;
+	margin-top: 35px;
+}
+
+#overlay {
+	width: 750px;
+	height: 380px;
+	background-color: RGBA(43, 43, 43, 0.5);
 }
 
 #geoquest {
-	color: RGBA(68, 67, 73, 0.7);
+	color: RGBA(255, 93, 96, 1.00);
 	font-size: 46px;
 	margin-bottom: 7px;
 }
@@ -39,4 +45,25 @@ body {
 	font-size: 24px;
 	margin: 10px;
 	color: RGBA(68, 67, 73, 0.7);
+}
+
+#submit {
+	width: 75px;
+	-webkit-transition: all .5s;
+	background: RGBA(190, 248, 207, 1.00);
+	line-height: 20px;
+	text-align: center;
+	font-weight: bold;
+	color: RGBA(68, 67, 73, 0.7);
+	border-radius: 5px;
+	box-shadow: 0px 0px 2px rgba(0,0,0,.5),
+		1px 1px 5px rgba(0,0,0,.3);
+	cursor: pointer;
+
+
+}
+
+#submit:hover{
+	background: #F5F6EE;
+	color: #664A86;
 }

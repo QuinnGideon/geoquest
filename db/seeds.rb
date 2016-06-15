@@ -1,284 +1,198 @@
-# # This file should contain all the record creation needed to seed the database with its default values.
-# # The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-# #
-# # Examples:
-# #
-# #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-# #   Mayor.create(name: 'Emanuel', city: cities.first)
-
-Country.delete_all
-
-Dir.foreach('./app/assets/images/flags') do |item|
-	string = item.gsub('.png', '')
-  Country.create(
-  	slug: string
-  )
-end
-
-# Country.create([
-# 	{
-# 		name: "Andora",
-# 		slug: "ad.png"
-# 		},
-# 	{
-# 		name: "United Arab Emirates",
-# 		slug: "ae.png"
-# 		},
-# 	{
-# 		name: "Afghanistan",
-# 		slug: ""
-# 		},
-# 		{
-# 		name: "Antigua and Barbuda",
-# 		slug: ""
-# 		},
-# 	{
-# 		name: "Anguilla",
-# 		slug: ""
-# 		},
-# 	{
-# 		name: "Albania",
-# 		slug: ""
-# 		},
-# 		{
-# 		name: "Armenia",
-# 		slug: ""
-# 		},
-# 	{
-# 		name: "Angola",
-# 		slug: ""
-# 		},
-# 	{
-# 		name: "Antarctica",
-# 		slug: ""
-# 		},
-# 		{
-# 		name: "Argentina",
-# 		slug: ""
-# 		},
-# 	{
-# 		name: "",
-# 		slug: ""
-# 		},
-# 	{
-# 		name: "",
-# 		slug: ""
-# 		},
-# 		{
-# 		name: "",
-# 		slug: ""
-# 		},
-# 	{
-# 		name: "",
-# 		slug: ""
-# 		},
-# 	{
-# 		name: "",
-# 		slug: ""
-# 		},
-# 		{
-# 		name: "",
-# 		slug: ""
-# 		},
-# 	{
-# 		name: "",
-# 		slug: ""
-# 		},
-# 	{
-# 		name: "",
-# 		slug: ""
-# 		},
-# 		{
-# 		name: "",
-# 		slug: ""
-# 		},
-# 	{
-# 		name: "",
-# 		slug: ""
-# 		},
-# 	{
-# 		name: "",
-# 		slug: ""
-# 		},
-# 		{
-# 		name: "",
-# 		slug: ""
-# 		},
-# 	{
-# 		name: "",
-# 		slug: ""
-# 		},
-# 	{
-# 		name: "",
-# 		slug: ""
-# 		},
-# 		{
-# 		name: "",
-# 		slug: ""
-# 		},
-# 	{
-# 		name: "",
-# 		slug: ""
-# 		},
-# 	{
-# 		name: "",
-# 		slug: ""
-# 		},
-# 		{
-# 		name: "",
-# 		slug: ""
-# 		},
-# 	{
-# 		name: "",
-# 		slug: ""
-# 		},
-# 	{
-# 		name: "",
-# 		slug: ""
-# 		},
-# 		{
-# 		name: "",
-# 		slug: ""
-# 		},
-# 	{
-# 		name: "",
-# 		slug: ""
-# 		},
-# 	{
-# 		name: "",
-# 		slug: ""
-# 		},
-# 		{
-# 		name: "",
-# 		slug: ""
-# 		},
-# 	{
-# 		name: "",
-# 		slug: ""
-# 		},
-# 	{
-# 		name: "",
-# 		slug: ""
-# 		},
-# 		{
-# 		name: "",
-# 		slug: ""
-# 		},
-# 	{
-# 		name: "",
-# 		slug: ""
-# 		},
-# 	{
-# 		name: "",
-# 		slug: ""
-# 		},
-# 		{
-# 		name: "",
-# 		slug: ""
-# 		},
-# 	{
-# 		name: "",
-# 		slug: ""
-# 		},
-# 	{
-# 		name: "",
-# 		slug: ""
-# 		},
-# 		{
-# 		name: "",
-# 		slug: ""
-# 		},
-# 	{
-# 		name: "",
-# 		slug: ""
-# 		},
-# 	{
-# 		name: "",
-# 		slug: ""
-# 		},
-# 		{
-# 		name: "",
-# 		slug: ""
-# 		},
-# 	{
-# 		name: "",
-# 		slug: ""
-# 		},
-# 	{
-# 		name: "",
-# 		slug: ""
-# 		},
-# 		{
-# 		name: "",
-# 		slug: ""
-# 		},
-# 	{
-# 		name: "",
-# 		slug: ""
-# 		},
-# 	{
-# 		name: "",
-# 		slug: ""
-# 		},
-# 		{
-# 		name: "",
-# 		slug: ""
-# 		},
-# 	{
-# 		name: "",
-# 		slug: ""
-# 		},
-# 	{
-# 		name: "",
-# 		slug: ""
-# 		},
-# 		{
-# 		name: "",
-# 		slug: ""
-# 		},
-# 	{
-# 		name: "",
-# 		slug: ""
-# 		},
-# 	{
-# 		name: "",
-# 		slug: ""
-# 		},
-# 		{
-# 		name: "",
-# 		slug: ""
-# 		},
-# 	{
-# 		name: "",
-# 		slug: ""
-# 		},
-# 	{
-# 		name: "",
-# 		slug: ""
-# 		},
-# 		{
-# 		name: "",
-# 		slug: ""
-# 		},
-# 	{
-# 		name: "",
-# 		slug: ""
-# 		},
-# 	{
-# 		name: "",
-# 		slug: ""
-# 		},
-# 		{
-# 		name: "",
-# 		slug: ""
-# 		},
-# 	{
-# 		name: "",
-# 		slug: ""
-# 		},
-# 	{
-# 		name: "",
-# 		slug: ""
-# 		},
-		
-# 	])
+Country.create!([
+  {name: "Andorra", slug: "ad"},
+  {name: "United Arab Emirates", slug: "ae"},
+  {name: "Afghanistan", slug: "af"},
+  {name: "Antigua and Barbuda", slug: "ag"},
+  {name: "Albania", slug: "al"},
+  {name: "Armenia", slug: "am"},
+  {name: "Angola", slug: "ao"},
+  {name: "Argentina", slug: "ar"},
+  {name: "Austria", slug: "at"},
+  {name: "Australia", slug: "au"},
+  {name: "Azerbaijan", slug: "az"},
+  {name: "Bosnia and Herzegovina", slug: "ba"},
+  {name: "Barbados", slug: "bb"},
+  {name: "Bangladesh", slug: "bd"},
+  {name: "Belgium", slug: "be"},
+  {name: "Burkina Faso", slug: "bf"},
+  {name: "Bulgaria", slug: "bg"},
+  {name: "Bahrain", slug: "bh"},
+  {name: "Burundi", slug: "bi"},
+  {name: "Benin", slug: "bj"},
+  {name: "Brunei Darussalam", slug: "bn"},
+  {name: "Bolivia", slug: "bo"},
+  {name: "Brazil", slug: "br"},
+  {name: "Bahamas", slug: "bs"},
+  {name: "Bhutan", slug: "bt"},
+  {name: "Botswana", slug: "bw"},
+  {name: "Belarus", slug: "by"},
+  {name: "Belize", slug: "bz"},
+  {name: "Canada", slug: "ca"},
+  {name: "The Democratic Republic of The Congo", slug: "cd"},
+  {name: "Central African Republic", slug: "cf"},
+  {name: "Congo", slug: "cg"},
+  {name: "Switzerland", slug: "ch"},
+  {name: "Cote D'ivoire", slug: "ci"},
+  {name: "Chile", slug: "cl"},
+  {name: "Cameroon", slug: "cm"},
+  {name: "China", slug: "cn"},
+  {name: "Colombia", slug: "co"},
+  {name: "Costa Rica", slug: "cr"},
+  {name: "Cuba", slug: "cu"},
+  {name: "Cape Verde", slug: "cv"},
+  {name: "Cyprus", slug: "cy"},
+  {name: "Czech Republic", slug: "cz"},
+  {name: "Germany", slug: "de"},
+  {name: "Djibouti", slug: "dj"},
+  {name: "Denmark", slug: "dk"},
+  {name: "Dominica", slug: "dm"},
+  {name: "Dominican Republic", slug: "do"},
+  {name: "Algeria", slug: "dz"},
+  {name: "Ecuador", slug: "ec"},
+  {name: "Estonia", slug: "ee"},
+  {name: "Egypt", slug: "eg"},
+  {name: "Western Sahara", slug: "eh"},
+  {name: "Eritrea", slug: "er"},
+  {name: "Spain", slug: "es"},
+  {name: "Ethiopia", slug: "et"},
+  {name: "Finland", slug: "fi"},
+  {name: "Fiji", slug: "fj"},
+  {name: "Federated States of Micronesia", slug: "fm"},
+  {name: "France", slug: "fr"},
+  {name: "Gabon", slug: "ga"},
+  {name: "United Kingdom", slug: "gb"},
+  {name: "Grenada", slug: "gd"},
+  {name: "Georgia", slug: "ge"},
+  {name: "Ghana", slug: "gh"},
+  {name: "Gambia", slug: "gm"},
+  {name: "Guinea", slug: "gn"},
+  {name: "Equatorial Guinea", slug: "gq"},
+  {name: "Greece", slug: "gr"},
+  {name: "Guatemala", slug: "gt"},
+  {name: "Guinea-Bissau", slug: "gw"},
+  {name: "Guyana", slug: "gy"},
+  {name: "Honduras", slug: "hn"},
+  {name: "Croatia", slug: "hr"},
+  {name: "Haiti", slug: "ht"},
+  {name: "Hungary", slug: "hu"},
+  {name: "Indonesia", slug: "id"},
+  {name: "Ireland", slug: "ie"},
+  {name: "Israel", slug: "il"},
+  {name: "India", slug: "in"},
+  {name: "Iraq", slug: "iq"},
+  {name: "Islamic Republic of Iran", slug: "ir"},
+  {name: "Iceland", slug: "is"},
+  {name: "Italy", slug: "it"},
+  {name: "Jamaica", slug: "jm"},
+  {name: "Jordan", slug: "jo"},
+  {name: "Japan", slug: "jp"},
+  {name: "Kenya", slug: "ke"},
+  {name: "Kyrgyzstan", slug: "kg"},
+  {name: "Cambodia", slug: "kh"},
+  {name: "Kiribati", slug: "ki"},
+  {name: "Comoros", slug: "km"},
+  {name: "Saint Kitts and Nevis", slug: "kn"},
+  {name: "Democratic People's Republic of", slug: "kp"},
+  {name: "Republic of Korea", slug: "kr"},
+  {name: "Kosovo", slug: "ks"},
+  {name: "Kuwait", slug: "kw"},
+  {name: "Kazakhstan", slug: "kz"},
+  {name: "Lao People's Democratic Republic", slug: "la"},
+  {name: "Lebanon", slug: "lb"},
+  {name: "Saint Lucia", slug: "lc"},
+  {name: "Liechtenstein", slug: "li"},
+  {name: "Sri Lanka", slug: "lk"},
+  {name: "Liberia", slug: "lr"},
+  {name: "Lesotho", slug: "ls"},
+  {name: "Lithuania", slug: "lt"},
+  {name: "Luxembourg", slug: "lu"},
+  {name: "Latvia", slug: "lv"},
+  {name: "Libya", slug: "ly"},
+  {name: "Morocco", slug: "ma"},
+  {name: "Monaco", slug: "mc"},
+  {name: "Republic of Moldova", slug: "md"},
+  {name: "Montenegro", slug: "me"},
+  {name: "Madagascar", slug: "mg"},
+  {name: "Marshall Islands", slug: "mh"},
+  {name: "Macedonia", slug: "mk"},
+  {name: "Mali", slug: "ml"},
+  {name: "Myanmar", slug: "mm"},
+  {name: "Mongolia", slug: "mn"},
+  {name: "Mauritania", slug: "mr"},
+  {name: "Malta", slug: "mt"},
+  {name: "Mauritius", slug: "mu"},
+  {name: "Maldives", slug: "mv"},
+  {name: "Malawi", slug: "mw"},
+  {name: "Mexico", slug: "mx"},
+  {name: "Malaysia", slug: "my"},
+  {name: "Mozambique", slug: "mz"},
+  {name: "Namibia", slug: "na"},
+  {name: "Niger", slug: "ne"},
+  {name: "Nigeria", slug: "ng"},
+  {name: "Nicaragua", slug: "ni"},
+  {name: "The Netherlands", slug: "nl"},
+  {name: "Norway", slug: "no"},
+  {name: "Nepal", slug: "np"},
+  {name: "Nauru", slug: "nr"},
+  {name: "New Zealand", slug: "nz"},
+  {name: "Oman", slug: "om"},
+  {name: "Panama", slug: "pa"},
+  {name: "Peru", slug: "pe"},
+  {name: "Papua New Guinea", slug: "pg"},
+  {name: "The Philippines", slug: "ph"},
+  {name: "Pakistan", slug: "pk"},
+  {name: "Poland", slug: "pl"},
+  {name: "Portugal", slug: "pt"},
+  {name: "Palau", slug: "pw"},
+  {name: "Paraguay", slug: "py"},
+  {name: "Qatar", slug: "qa"},
+  {name: "Romania", slug: "ro"},
+  {name: "Serbia", slug: "rs"},
+  {name: "Russia", slug: "ru"},
+  {name: "Rwanda", slug: "rw"},
+  {name: "Saudi Arabia", slug: "sa"},
+  {name: "The Solomon Islands", slug: "sb"},
+  {name: "The Seychelles", slug: "sc"},
+  {name: "Sudan", slug: "sd"},
+  {name: "Sweden", slug: "se"},
+  {name: "Singapore", slug: "sg"},
+  {name: "Slovenia", slug: "si"},
+  {name: "Slovakia", slug: "sk"},
+  {name: "Sierra Leone", slug: "sl"},
+  {name: "San Marino", slug: "sm"},
+  {name: "Senegal", slug: "sn"},
+  {name: "Somalia", slug: "so"},
+  {name: "Suriname", slug: "sr"},
+  {name: "Sao Tome and Principe", slug: "st"},
+  {name: "El Salvador", slug: "sv"},
+  {name: "Syria", slug: "sy"},
+  {name: "Swaziland", slug: "sz"},
+  {name: "Romania", slug: "td"},
+  {name: "Togo", slug: "tg"},
+  {name: "Thailand", slug: "th"},
+  {name: "Tajikistan", slug: "tj"},
+  {name: "East Timor", slug: "tl"},
+  {name: "Turkmenistan", slug: "tm"},
+  {name: "Tunisia", slug: "tn"},
+  {name: "Tonga", slug: "to"},
+  {name: "Turkey", slug: "tr"},
+  {name: "Trinidad and Tobago", slug: "tt"},
+  {name: "Tuvalu", slug: "tv"},
+  {name: "The Republic of China", slug: "tw"},
+  {name: "Tanzania", slug: "tz"},
+  {name: "Ukraine", slug: "ua"},
+  {name: "Uganda", slug: "ug"},
+  {name: "The United States", slug: "us"},
+  {name: "Uraguay", slug: "uy"},
+  {name: "Uzbekistan", slug: "uz"},
+  {name: "The Vatican City", slug: "va"},
+  {name: "Saint Vincent and the Grenadines", slug: "vc"},
+  {name: "Venezuela", slug: "ve"},
+  {name: "Vietnam", slug: "vn"},
+  {name: "Vanuatu", slug: "vu"},
+  {name: "Samoa", slug: "ws"},
+  {name: "Yemen", slug: "ye"},
+  {name: "South Africa", slug: "za"},
+  {name: "Zambia", slug: "zm"},
+  {name: "Zimbabwe", slug: "zw"}
+])
