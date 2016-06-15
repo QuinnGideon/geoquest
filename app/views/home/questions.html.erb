@@ -1,0 +1,101 @@
+
+<script>
+$(document).ready(function() {
+
+ 
+  //createQuestion();
+
+ getRandomCountry();
+
+
+$("#submit").click(function(){ 
+
+
+var correct;
+
+
+  if($("#opt0").val()=="1" && $("#optcheck0").is(":checked")){
+
+     alert("Correct");
+
+   correct=$("#opt0").html();
+  }
+
+  else if($("#opt1").val()=="1" && $("#optcheck1").is(":checked")){
+
+     alert("Correct");
+
+  correct=$("#opt1").html();
+  }
+  
+else if($("#opt2").val()=="1" && $("#optcheck2").is(":checked")){
+
+     alert("Correct");
+
+   correct=$("#opt2").html();
+  }
+ 
+else if($("#opt3").val()=="1" && $("#optcheck3").is(":checked")){
+
+     alert("Correct");
+
+   correct=$("#opt3").html();
+  }
+else{
+
+   alert("wrong answer");
+
+}
+
+
+
+
+
+ }); 
+
+
+
+});
+
+
+</script>
+
+<center>
+
+<br>
+<div id="loading">
+
+ <img src="loading.gif">
+</div>
+<p id="geoquest">GeoQuest</p>
+<p id="geoquesttag">Test your knowledge of country-ography!</p>
+
+<div id="info">
+	<br><br>
+		<form >
+		<div id="question"><div id="target"></div> <br>
+		</div>
+		<br><br>
+		<div id="opt0"><input type="radio" id="optcheck0" name="selection"></div>
+		<br><br>
+
+		<div id="opt1"><input type="radio"  id="optcheck1" name="selection"></div>
+		<br><br>
+
+		<div id="opt2"><input type="radio"  id="optcheck2" name="selection"></div>
+		<br><br>
+
+		<div id="opt3"><input type="radio"  id="optcheck3" name="selection"></div>
+
+		<br><br>
+		<input type="submit" id="submit" value="Answer">
+		</form>
+	<br>
+</div>
+
+<!-- <div> 
+    <object type="text/html" data="file:///Users/QuinnDev/Desktop/FINAL_PROJECT/wikipedia/index.html" width="400px" height="300px" style="overflow:auto;border:5px ridge blue">
+    </object>
+</div> -->
+
+</center>
