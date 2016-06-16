@@ -1,22 +1,25 @@
+
 var template=new Array();
 
-template[0]="The name of this country is ";
-template[1]="What is the capital of ";
-template[2]="What is the population of ";
-template[3]="Currency used in ";
+ var template1=[  ["Its capital is ", " and it's found in "] , [ "You would use  "," if you travelled to " ]]
+
+ var template2=[  ["The capital of ", " is"] , [ "This capital is found in ",". The country's domain ends with " ]]
+
+ 
+var answer;
 
 
 var ranCountry=new Array();
 
 var answerIndex;
 
-// This is the function for selecting a random country from the API at https://restcountries.eu/
+
 function getRandomCountry(){
 
 
 $("#info").hide();
 
-$('#loading').offset({ top : 160});
+$('#loading').offset({ top : 120});
 $("#loading").show();
 
 
@@ -25,40 +28,197 @@ $.ajax({ url: "https://restcountries.eu/rest/v1/all" }
 ).
 then(function(data) {
 
-	ranCountry[0]=Math.floor((Math.random() * data.length) +1);
+ //select a random country to make target of question
+   ranCountry[0]=Math.floor((Math.random() *data.length) );
 
-	// This is where we're setting what other answers to populate the choices with
-	var avoidSel=createQuestion(data,ranCountry[0]);
-	// The attributes below allows for three random wrong answers. It relies on which country's data, answerIndex, and avoids placing data where answer already is
-	showIncorrect(data, answerIndex, avoidSel);
+ 
+ //create question and populate correct answer option radio button
+ var avoidSel=createQuestion(data,ranCountry[0]);
 
-	}); 
+ //populate 3 other options with incorrect data
+ showIncorrect(data, answerIndex, avoidSel);
+
+
+ }); 
 
 }
 
-// Creating a question to populate first correct option, and let us know where it is placed
+
 function createQuestion(data,selectedCountry){
 
 
- var country = {
+ var country ={
 
   name:"",
   capital:"",
-  population:0,
+  subregion:"",
+  topLevelDomain:"",
   currency:"",
-  lat:0,
-  lng: 0,
+ 
 
 };
-	// Accessing data from the API, and setting variables. Also where true answers are held.
-	country.name=data[selectedCountry].name
+
+ //populate country object with randomly select country data from api call
+  country.name=data[selectedCountry].name
   country.capital=data[selectedCountry].capital
-  country.population=data[selectedCountry].population
+  country.subregion=data[selectedCountry].subregion
+  country.topLevelDomain=data[selectedCountry].topLevelDomain[0]
   country.currency=data[selectedCountry].currencies[0]
-  country.lat=data[selectedCountry].latlng[0]
-  country.lng=data[selectedCountry].latlng[1]
+ 
+
+ //randomly select which question type to be. asked
+//based on four question templates 
+  answerIndex=Math.floor((Math.random() *4));
+
+ 
+ var ran=Math.floor((Math.random() *1));
 
 
-  answerIndex=Math.floor((Math.random() *3));
+$("#question").empty();
 
-	var ran=Math.floor((Math.random() *template.length));
+
+//template 0 selected
+ if(answerIndex==0){
+
+
+ $("#question").append(template1[0][0]);
+ $("#question").append(country.capital);
+ $("#question").append(template1[0][1]);
+ $("#question").append(country.subregion);
+
+}
+
+//template 1
+if(answerIndex==1){
+
+
+ $("#question").append(template1[1][0]);
+ $("#question").append(country.currency);
+ $("#question").append(template1[1][1]);
+ $("#question").append(country.capital);
+ $("#question").append(". Name the country.");
+
+}
+
+
+//template 2
+if(answerIndex==2){
+
+$("#question").append(template2[0][0]);
+$("#question").append(country.name);
+$("#question").append(template2[0][1]);
+
+
+}
+// template 3
+if(answerIndex==3){
+
+	$("#question").append(template2[1][0]);
+	$("#question").append(country.subregion);
+	$("#question").append(template2[1][1]);
+
+	$("#question").append(country.topLevelDomain);
+
+}
+ return showAnswer(country,answerIndex);
+}
+
+
+ //insert answer randomly in one of four options
+function showAnswer(country,answerIndex){
+
+  var answerPlacement=Math.floor((Math.random() *4) );
+
+
+ if(answerIndex==0  || answerIndex==1){
+
+   $("#opt"+answerPlacement).val("1");
+   
+   $("#opt"+answerPlacement).append("&nbsp;"+country.name);
+  answer=country.name;
+ }
+
+  if(answerIndex==2 || answerIndex==3){
+
+      $("#opt"+answerPlacement).val("1");
+   
+   $("#opt"+answerPlacement).append("&nbsp;"+country.capital);
+  answer=country.capital;
+  }
+
+
+
+
+ return answerPlacement;
+
+}
+
+
+
+ // populate remaining options with incorrect but identical type of data 
+function showIncorrect(data,answerIndex,avoidCurrentPlacement){
+
+
+var incorrectPlacement=avoidCurrentPlacement+1;
+
+
+   ranCountry[1]=Math.floor((Math.random() *data.length) +1);
+   ranCountry[2]=Math.floor((Math.random() *data.length) +1);
+   ranCountry[3]=Math.floor((Math.random() *data.length) +1);
+
+  if(ranCountry[0]==ranCountry[1]){
+    ranCountry[1]++;
+  }
+
+  if(ranCountry[1]==ranCountry[2]){
+    ranCountry[2]++;
+  }
+   if(ranCountry[2]==ranCountry[3]){
+    ranCountry[3]++;
+  }
+
+for(x=1;x<4;x++){
+
+
+ if(incorrectPlacement >3){
+      incorrectPlacement=0;
+  }
+
+  
+if(incorrectPlacement==avoidCurrentPlacement){
+
+    incorrectPlacement ++;
+  }
+
+ 
+
+ if(answerIndex==0  || answerIndex==1){
+
+
+     $("#opt"+incorrectPlacement).val("0");
+      $("#opt"+ incorrectPlacement).append(data[ranCountry[x]].name);
+
+    
+   }
+  else if(answerIndex==2  || answerIndex==3){
+
+
+     $("#opt"+incorrectPlacement).val("0");
+      $("#opt"+ incorrectPlacement).append(data[ranCountry[x]].capital);
+
+   }
+   
+ 
+
+incorrectPlacement++;
+
+ 
+}
+
+$("#loading").hide();
+$("#info").show();
+
+
+
+}
+

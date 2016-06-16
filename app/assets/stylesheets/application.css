@@ -18,25 +18,40 @@ body {
 	font-family: 'Montserrat', sans-serif;
 }
 
-#info {
+#basebg {
 	background-image: url('travel.jpg');
-	width: 750px;
-	height: 380px;
+	width: 810px;
+	height: 398px;
 	border: 12px solid RGBA(255, 93, 96, 0.97);
 	border-radius: 3px;
+	margin-top: 25px;
+}
+
+#info {
+	
+	width: 790px;
+	height: 398px;
 	color: white;
-	margin-top: 35px;
+	padding-left: 5px;
+	padding-right: 5px;
+	display: inline;
 }
 
 #overlay {
-	width: 750px;
-	height: 380px;
-	background-color: RGBA(43, 43, 43, 0.5);
+	width: 810px;
+	height: 398px;
+	background-color: RGBA(43, 43, 43, 0.65);
 }
+
+#question {
+	font-size: 25px;
+}
+
+
 
 #geoquest {
 	color: RGBA(255, 93, 96, 1.00);
-	font-size: 46px;
+	font-size: 40px;
 	margin-bottom: 7px;
 }
 
@@ -55,7 +70,7 @@ body {
 	text-align: center;
 	font-weight: bold;
 	color: RGBA(68, 67, 73, 0.7);
-	border-radius: 5px;
+	border-radius: 10px;
 	box-shadow: 0px 0px 2px rgba(0,0,0,.5),
 		1px 1px 5px rgba(0,0,0,.3);
 	cursor: pointer;
@@ -64,6 +79,6 @@ body {
 }
 
 #submit:hover{
-	background: #F5F6EE;
-	color: #664A86;
+	background: RGBA(255, 93, 96, 1.00);
+	color: RGBA(190, 248, 207, 1.00);
 }
