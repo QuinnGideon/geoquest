@@ -1,68 +1,15 @@
 
-<script>
-$(document).ready(function() {
-
-	 //createQuestion();
-
-	 getRandomCountry();
-
-	$("#submit").click(function(){ 
-
-		var correct;
-
-		  if($("#opt0").val()=="1" && $("#optcheck0").is(":checked")){
-
-		  	$('#answers').text("Fantastic");
-
-
-		   correct=$("#opt0").html();
-		  }
-
-		  else if($("#opt1").val()=="1" && $("#optcheck1").is(":checked")){
-
-		  	$('#answers').text("You got it!");
-
-		  correct=$("#opt1").html();
-		  }
-		  
-		else if($("#opt2").val()=="1" && $("#optcheck2").is(":checked")){
-
-				$('#answers').text("Correct!");
-		     
-
-		   correct=$("#opt2").html();
-		  }
-		 
-		else if($("#opt3").val()=="1" && $("#optcheck3").is(":checked")){
-				$('#answers').text("You rock!");
-
-
-		   correct=$("#opt3").html();
-		  }
-		else{
-			$('#answers').text("Not quite, but it's "+answer);
-
-		}
-
-	 }); 
-});
-
-
-</script>
 
 <center>
-
-<br>
 
 <p id="geoquest">GeoQuest</p>
 <p id="geoquesttag">Test your knowledge of country-ography!</p>
 
 <div id="basebg">
 	<div id="overlay">
-
-		<div id="info">
+		<div id="answers"></div>
+			<div id="info">
 				<br><br>
-					<form >
 					<div id="question"><div id="target"></div> <br>
 					</div>
 					<br><br>
@@ -79,9 +26,8 @@ $(document).ready(function() {
 
 					<br>
 					<input type="submit" id="submit" value="Answer">
-					</form>
 				<br>
-		</div>
+			</div>
 	</div>
 </div>
 

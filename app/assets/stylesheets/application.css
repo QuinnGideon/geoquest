@@ -47,6 +47,18 @@ body {
 	font-size: 25px;
 }
 
+#answers {
+	width: 190px;
+	height: 100px;
+	background-color: RGBA(190, 248, 207, 0.5);
+	margin-top: 293px;
+	margin-left: 212px;
+	border: solid 2px RGBA(177, 246, 203, 1.00);
+	border-radius: 5px;
+	display: inline;
+	z-index: 5;
+	position: absolute;
+}
 
 
 #geoquest {
@@ -82,3 +94,4 @@ body {
 	background: RGBA(255, 93, 96, 1.00);
 	color: RGBA(190, 248, 207, 1.00);
 }
+
