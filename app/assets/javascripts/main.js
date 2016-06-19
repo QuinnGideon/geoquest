@@ -12,6 +12,18 @@
 		$("#question").append(theTemplate);
 	}
 
+	// Google Maps
+		function initialize(lat,lng) {
+	  var mapProp = {
+	    center:new google.maps.LatLng(lat,lng),
+	    zoom:5,
+	    mapTypeId:google.maps.MapTypeId.HYBRID
+	  };
+	  var map=new google.maps.Map(document.getElementById("googleMap"), mapProp);
+	}
+	// google.maps.event.addDomListener(window, 'load', initialize);
+
+
 function getRandomCountry(){
 	$("#info").hide();
 
@@ -38,13 +50,21 @@ function createQuestion(data,selectedCountry){
 		subregion:"",
 		topLevelDomain:"",
 		currency:"",
+		lat:0,
+		lng:0,
 	};
+
  //populate country object with randomly selected country data from api call
   country.name=data[selectedCountry].name
   country.capital=data[selectedCountry].capital
   country.subregion=data[selectedCountry].subregion
   country.topLevelDomain=data[selectedCountry].topLevelDomain[0]
   country.currency=data[selectedCountry].currencies[0]
+  country.lat=data[selectedCountry].latlng[0]
+  country.lng=data[selectedCountry].latlng[1]
+
+  initialize(country.lat,country.lng);
+  
  
  //randomly select which question type to be asked
 //based on four question templates 
@@ -90,6 +110,7 @@ function createQuestion(data,selectedCountry){
 		appendQuestion(country.topLevelDomain);
 
 	}
+
 	 return showAnswer(country,answerIndex);
 }
 
