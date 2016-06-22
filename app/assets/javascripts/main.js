@@ -16,7 +16,7 @@
 		function initialize(lat,lng) {
 	  var mapProp = {
 	    center:new google.maps.LatLng(lat,lng),
-	    zoom:5,
+	    zoom:4,
 	    mapTypeId:google.maps.MapTypeId.HYBRID
 	  };
 	  var map=new google.maps.Map(document.getElementById("googleMap"), mapProp);

@@ -14,12 +14,12 @@
  *= require_self
  */
 body {
-	background-image: url('mainbg.png');
+	background: image-url('mainbg.png');
 	font-family: 'Montserrat', sans-serif;
 }
 
 #basebg {
-	background-image: url('travel.jpg');
+	background: image-url('travel.jpg');
 	width: 810px;
 	height: 398px;
 	border: 12px solid RGBA(255, 93, 96, 0.97);
