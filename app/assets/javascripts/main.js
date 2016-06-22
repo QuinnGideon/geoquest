@@ -1,7 +1,7 @@
 
 	var template=new Array();
 	// country.name questions
-	var template1=[  ["Its capital is ", " and it's found in "] , [ "You would use  "," currency, if you travelled to " ]]
+	var template1=[  ["The capital is ", " and it's found in "] , [ "You would use  "," currency, if you travelled to " ]]
 	// country.capital questions
 	var template2=[  ["The capital of ", " is"] , [ "This capital is found in ",". The country's domain ends with " ]]
 
