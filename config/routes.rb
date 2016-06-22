@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
-  get 'home/questions'
+	root 'home#questions'
+  # get '/home/questions'
 
   namespace :api do
     resources :countries, only: [:index]
