@@ -16,13 +16,13 @@
 
 
 body {
-	background-image: url('images/mainbg.png');
+	background-image: url('/images/mainbg.png');
 	font-family: 'Montserrat', sans-serif;
 }
 
 
 #basebg {
-	background-image: url('images/travel.jpg');
+	background-image: url('/images/travel.jpg');
 	width: 810px;
 	height: 398px;
 	border: 12px solid RGBA(255, 93, 96, 0.97);
