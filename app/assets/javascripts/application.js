@@ -25,29 +25,29 @@ $(document).ready(function() {
 		  if($("#opt0").val()=="1" && $("#optcheck0").is(":checked")){
 		  	$('#answers').text("Fantastic");
 	setTimeout(function(){window.location.reload();
-		  }, 1500);
+		  }, 1000);
 
 		  }
 
 		  else if($("#opt1").val()=="1" && $("#optcheck1").is(":checked")){
 		  		  	$('#answers').text("You got it!");
 		  	setTimeout(function(){window.location.reload();
-}, 1500);
+}, 1000);
 		  }
 		  
 			else if($("#opt2").val()=="1" && $("#optcheck2").is(":checked")){
 							$('#answers').text("Correct!");
 				setTimeout(function(){window.location.reload();
-}, 1500);
+}, 1000);
 		  }
 		 
 			else if($("#opt3").val()=="1" && $("#optcheck3").is(":checked")){
 							$('#answers').text("You rock!");
 				setTimeout(function(){window.location.reload();
-}, 1500);
+}, 1000);
 		  }
 			else{
-				$('#answers').text("Not quite, but it's "+answer);
+				$('#answers').text("Not quite, but it's "+answer).css("color", "red");
 				setTimeout(function(){window.location.reload();
 }, 3000);
 
@@ -55,6 +55,10 @@ $(document).ready(function() {
 
 	 }); 
 
-
-
+// $("#hint").click(function(){
+//     $("#googleMapToggle").toggle();
+// });
+	$("#hint").click(function(){
+	    $("#googleMap").css("visibility", "visible").toggle();
+		});
 });

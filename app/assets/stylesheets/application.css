@@ -82,6 +82,7 @@ body {
 	text-align: center;
 	font-weight: bold;
 	color: RGBA(68, 67, 73, 0.7);
+	border: 5px;
 	border-radius: 10px;
 	box-shadow: 0px 0px 2px rgba(0,0,0,.5),
 		1px 1px 5px rgba(0,0,0,.3);
@@ -93,5 +94,49 @@ body {
 #submit:hover{
 	background: RGBA(255, 93, 96, 1.00);
 	color: RGBA(190, 248, 207, 1.00);
+}
+
+#googleMap {
+	width: 500px;
+	height: 380px;
+	visibility: hidden;
+}
+	/*height: 380px;*/
+
+/*#googleMapToggle {
+	width: 500px;
+	display: none;
+}*/
+
+#hint {
+	border-radius: 10px;
+}
+
+.modal {
+	position: fixed;
+	left: 50%;
+	top: 50px;
+	width: 60%;
+	padding: 30px;
+	background-color: RGBA(146, 178, 178, 1.00);
+	border-radius: 5px;
+	box-shadow: 3px 3px RGBA(0, 0, 0, 0.5);
+	-webkit-transform: translate(-50%, 0);
+	transform: translate(-50%, 0);
+	z-index: 2;
+}
+
+.modal-close {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+}
+
+.modal-shade{
+	position: fixed;
+	height: 100%;
+	width: 100%;
+	background-color: RGBA(0, 0, 0, 0.7);
+	z-index: 1;
 }
 
