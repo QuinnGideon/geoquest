@@ -47,7 +47,7 @@ $(document).ready(function() {
 }, 1000);
 		  }
 			else{
-				$('.answers').text("Not quite, but it's "+answer).css("color", "red");
+				$('.answers').text("Not quite, but it's "+answer).css("color", "white");
 				setTimeout(function(){window.location.reload();
 }, 3000);
 
