@@ -47,7 +47,7 @@ $(document).ready(function() {
 }, 1000);
 		  }
 			else{
-				$('.answers').text("Not quite, but it's "+answer).css("color", "white");
+				$('.answers').text("Not quite, but it's "+answer).css("color", "RGBA(68, 67, 73, 1.00)");
 				setTimeout(function(){window.location.reload();
 }, 3000);
 
